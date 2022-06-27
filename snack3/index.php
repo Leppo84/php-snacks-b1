@@ -68,7 +68,7 @@ $arr_all_posts = [
     </head>
     <body><?php
 
-    echo var_dump($arr_all_posts);
+    // echo var_dump($arr_all_posts);
     // echo var_dump($arr_all_posts[1]);
 
 
@@ -83,13 +83,17 @@ $arr_all_posts = [
 
     for ($_i = 0; $_i < $arr_dates_posts ; $_i++) {
         $stamp_date = $all_dates[$_i];
-        echo "<div>{$stamp_date}";
+        echo "<br><div><b>{$stamp_date}</b>";
             $day_posts_leng = count($arr_all_posts[$stamp_date]);
-            echo var_dump('Mah: '.$day_posts);
+            // echo var_dump('E questo: '.$day_posts_leng . ' che è?');
 
-            // for ($_j=0; $_j < $day_posts_leng; $_j++) {
-            //     echo $arr_all_posts[$stamp_date][$_J]['title'];;                
-            // }
+            for ($_j=0; $_j < $day_posts_leng; $_j++) {
+                echo "<h4>{$arr_all_posts[$stamp_date][$_j]['title']}</h4>";     
+                echo "<span>{$arr_all_posts[$stamp_date][$_j]['author']}:</span>";
+                echo "<br>";
+                echo "<span>{$arr_all_posts[$stamp_date][$_j]['text']}</span>";
+
+            }
         echo "</div>";            
     }
     ?>
